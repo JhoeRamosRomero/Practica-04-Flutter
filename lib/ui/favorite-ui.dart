@@ -122,7 +122,8 @@ class Header extends StatelessWidget {
                         "VIEW ALL",
                         style: TextStyle(
                           fontSize: 8,
-                          fontWeight: FontWeight.bold
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white
                         ),
                       ),
                       decoration: BoxDecoration(
@@ -137,32 +138,37 @@ class Header extends StatelessWidget {
             ),
               //--- Componentes - Linea 03
           ),
-          ItemHeaderCustom(
-          cantidadEstrellas: 4,
-          title: "Washer Machine",
-          calificacion: "4.6",
-          imgAssets: "assets/Item01.png",
-          description: "Ready Wash Staininess",
-          )
-          /*SingleChildScrollView(
-            child: Column(
-              children: [
-                Container(
-                  child: ListView(
-                    scrollDirection: Axis.horizontal,
-                    children: [
-                      ItemHeaderCustom(
-                        cantidadEstrellas: 4,
-                        title: "Washer Machine",
-                        calificacion: "4.6",
-                        description: "Ready Wash Staininess",
-                      )
-                    ],
+          SingleChildScrollView(
+            child: Container(
+              height: 100,
+              child: ListView(
+                scrollDirection: Axis.horizontal,
+                children: [
+                  ItemHeaderCustom(
+                    cantidadEstrellas: 4,
+                    title: "Washer Machine",
+                    calificacion: "4.6",
+                    imgAssets: "assets/Item01.png",
+                    description: "Ready Wash Staininess",
                   ),
-                )
-              ],
+                  ItemHeaderCustom(
+                    cantidadEstrellas: 4,
+                    title: "Washer Machine",
+                    calificacion: "4.6",
+                    imgAssets: "assets/Item01.png",
+                    description: "Ready Wash Staininess",
+                  ),
+                  ItemHeaderCustom(
+                    cantidadEstrellas: 4,
+                    title: "Washer Machine",
+                    calificacion: "4.6",
+                    imgAssets: "assets/Item01.png",
+                    description: "Ready Wash Staininess",
+                  )
+                ],
+              ),
             ),
-          )*/
+          ),
         ],
       ),
 
@@ -184,7 +190,11 @@ class Body extends StatelessWidget {
           //--- Titulo
 
           Container(
-            child: Text("ALL"),
+            child: Text("ALL", style: TextStyle(
+              fontWeight: FontWeight.bold
+            ),),
+            alignment: Alignment.centerLeft,
+            margin: EdgeInsets.symmetric( horizontal: 22, vertical: 15 ),
           ),
 
           //--- ListView
