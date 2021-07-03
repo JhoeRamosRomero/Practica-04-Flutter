@@ -121,17 +121,21 @@ class Body extends StatelessWidget {
 
     return Container(
 
+      margin: EdgeInsets.symmetric( horizontal: 22, vertical: 15 ),
+
       child: Column(
         children: [
 
           //--- Titulo
 
           Container(
-            child: Text("ALL", style: TextStyle(
-              fontWeight: FontWeight.bold
-            ),),
+            margin: EdgeInsets.only( bottom: 15 ),
+            child: Text("In this week", style: 
+              TextStyle(
+                fontWeight: FontWeight.bold
+              ),
+            ),
             alignment: Alignment.centerLeft,
-            margin: EdgeInsets.symmetric( horizontal: 22, vertical: 15 ),
           ),
 
           //--- ListView
@@ -145,31 +149,31 @@ class Body extends StatelessWidget {
                   descripcionItem: "Microwave Ove",
                   calificacionItem: "4.6"         ,
                   cantidadEstrellasItem: 4        ,
-                  imagen: "assets/Item01.png",
+                  imagen: "assets\Portada 05.jpg",
                 ),
                 ItemListCustom(
                   descripcionItem: "Wishk",
                   calificacionItem: "3.3"         ,
                   cantidadEstrellasItem: 3        ,
-                  imagen: "assets/Item02.png",
+                  imagen: "assets\Portada 04.jpg",
                 ),
                 ItemListCustom(
                   descripcionItem: "Speakers",
                   calificacionItem: "4.6"         ,
                   cantidadEstrellasItem: 4        ,
-                  imagen: "assets/Item03.png",
+                  imagen: "assets\Portada 03.jpg",
                 ),
                 ItemListCustom(
                   descripcionItem: "Air Conditioner",
                   calificacionItem: "5.0"         ,
                   cantidadEstrellasItem: 5        ,
-                  imagen: "assets/Item04.png",
+                  imagen: "assets\Portada 02.jpg",
                 ),
                 ItemListCustom(
                   descripcionItem: "Television",
                   calificacionItem: "5.0"         ,
                   cantidadEstrellasItem: 5        ,
-                  imagen: "assets/Item01.png",
+                  imagen: "assets\Portada 01.jpg",
                 ),
 
               ],
