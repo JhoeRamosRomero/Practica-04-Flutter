@@ -1,18 +1,20 @@
 import 'package:flutter/material.dart';
-import 'package:practica04/widget/icon-star-custom.dart';
 
 class ItemListCustom extends StatelessWidget{
 
-
-  final String descripcionItem        ;
+  final String title                  ;
+  final int    year                   ;
+  final String productor              ; 
+  final String duracion               ;
   final String calificacionItem       ;
-  final int    cantidadEstrellasItem  ;
-  final String imagen;
+  final String imagen                 ;
 
   const ItemListCustom({
-    this.descripcionItem,
+    this.title,
+    this.year,
+    this.productor,
+    this.duracion,
     this.calificacionItem,
-    this.cantidadEstrellasItem,
     this.imagen
     });
 
@@ -20,14 +22,17 @@ class ItemListCustom extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
 
+    final anchoComponente = MediaQuery.of(context).size.width;
+
     return Container(
 
       //--- Customizer Component
       //-----------------------------
 
-      height: 80,
+      height: 120,
+      width: double.infinity,
       padding: EdgeInsets.all(10),
-      margin: EdgeInsets.symmetric(vertical: 2, ),
+      margin: EdgeInsets.symmetric(vertical: 2 ),
 
       decoration: BoxDecoration(
 
@@ -48,27 +53,44 @@ class ItemListCustom extends StatelessWidget{
             borderRadius: BorderRadius.circular(10),
             child: Image.asset(
             this.imagen,
-            width: double.infinity,
-            height: 135,
+            width: 80,
+            height: 80,
             fit: BoxFit.fill,
             ),
           ) ,
+      
           Container(
-            margin: EdgeInsets.symmetric( horizontal: 15, vertical: 10 ),
-            width: 150,
+            padding: EdgeInsets.symmetric( vertical: 20, horizontal: 5 ),
+            margin: EdgeInsets.only( left: 20),
+            width: anchoComponente - 170,
             child: Column(
               children: [
                 Container(
-                  child: Text( this.descripcionItem, style: TextStyle(
-                     fontWeight: FontWeight.bold ,
-                    ),
-                    textAlign: TextAlign.left,
-                  ),
                   alignment: Alignment.centerLeft,
-                )
+                  child: Text(
+                    this.title,
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold
+                    ),
+                  ),
+                ),
+                Container(
+                  margin: EdgeInsets.symmetric( vertical: 5 ),
+                  alignment: Alignment.centerLeft,
+                  child: Text(
+                    this.productor + " * " + this.year.toString()
+                  ),
+                ),
+                Container(
+                  alignment: Alignment.centerLeft,
+                  child: Text(
+                    this.duracion
+                  ),
+                ) 
               ],
             ),
           )
+
         ],
 
       ),

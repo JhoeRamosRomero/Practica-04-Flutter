@@ -59,9 +59,11 @@ class Header extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
 
+    final sizeWidget = MediaQuery.of(context).size.width;
+
     return Container(
-      margin: EdgeInsets.symmetric( horizontal: 20, vertical: 20 ),
-      height: 300,
+      margin: EdgeInsets.symmetric( horizontal: 20, vertical: 15 ),
+      height: sizeWidget * 0.60 ,
       child: Column(
         children: [
           
@@ -101,6 +103,18 @@ class Header extends StatelessWidget {
                     year: 2020,
                     calificacion: "4.6",
                     imgAssets: "assets/Portada 03.jpg",
+                  ) ,
+                  ItemHeaderCustom(
+                    title: "MALEFICA",
+                    year: 2017,
+                    calificacion: "4.6",
+                    imgAssets: "assets/Portada 04.jpg",
+                  ) ,
+                  ItemHeaderCustom(
+                    title: "DISNEY",
+                    year: 2021,
+                    calificacion: "4.6",
+                    imgAssets: "assets/Portada 05.jpg",
                   ) 
                 ],
               ),
@@ -120,8 +134,7 @@ class Body extends StatelessWidget {
   Widget build(BuildContext context) {
 
     return Container(
-
-      margin: EdgeInsets.symmetric( horizontal: 22, vertical: 15 ),
+      margin: EdgeInsets.symmetric( horizontal: 22 ),
 
       child: Column(
         children: [
@@ -146,34 +159,44 @@ class Body extends StatelessWidget {
               children: [
 
                 ItemListCustom(
-                  descripcionItem: "Microwave Ove",
-                  calificacionItem: "4.6"         ,
-                  cantidadEstrellasItem: 4        ,
-                  imagen: "assets\Portada 05.jpg",
+                  title: "Loki",
+                  calificacionItem: "XXX",
+                  duracion: "1 Temporada",
+                  productor: "Jhoel Ramos Romero",
+                  year: 2021,
+                  imagen: "assets/Miniatura 05.jpg",
                 ),
                 ItemListCustom(
-                  descripcionItem: "Wishk",
-                  calificacionItem: "3.3"         ,
-                  cantidadEstrellasItem: 3        ,
-                  imagen: "assets\Portada 04.jpg",
+                  title: "Cruela",
+                  calificacionItem: "XXX",
+                  duracion: "2 Horas",
+                  productor: "Disney",
+                  year: 2021,
+                  imagen: "assets/Miniatura 04.jpg",
                 ),
                 ItemListCustom(
-                  descripcionItem: "Speakers",
-                  calificacionItem: "4.6"         ,
-                  cantidadEstrellasItem: 4        ,
-                  imagen: "assets\Portada 03.jpg",
+                  title: "Dark",
+                  calificacionItem: "XXX",
+                  duracion: "3 Temporadas",
+                  productor: "Anthony Ramos Romero",
+                  year: 2018,
+                  imagen: "assets/Miniatura 03.jpg",
                 ),
                 ItemListCustom(
-                  descripcionItem: "Air Conditioner",
-                  calificacionItem: "5.0"         ,
-                  cantidadEstrellasItem: 5        ,
-                  imagen: "assets\Portada 02.jpg",
+                  title: "Left4Deas",
+                  calificacionItem: "XXX",
+                  duracion: "6 Capítulos",
+                  productor: "Los Judas",
+                  year: 2021,
+                  imagen: "assets/Miniatura 02.jpg",
                 ),
                 ItemListCustom(
-                  descripcionItem: "Television",
-                  calificacionItem: "5.0"         ,
-                  cantidadEstrellasItem: 5        ,
-                  imagen: "assets\Portada 01.jpg",
+                  title: "¿Quién Mató a Sara?",
+                  calificacionItem: "XXX",
+                  duracion: "3 Temporadas",
+                  productor: "Desconocido",
+                  year: 2020,
+                  imagen: "assets/Miniatura 01.jpg",
                 ),
 
               ],
