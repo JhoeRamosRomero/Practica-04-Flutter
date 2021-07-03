@@ -1,1 +1,68 @@
-import 'package:flutter/cupertino.dart';import 'package:flutter/material.dart';import 'package:font_awesome_flutter/font_awesome_flutter.dart';import 'package:practica04/widget/icon-star-custom.dart';class ItemHeaderCustom extends StatelessWidget {  //--- Parametros  final String imgAssets;  final String description;  final String title;  final String calificacion;  final int cantidadEstrellas;  const ItemHeaderCustom(      {this.imgAssets,      this.description,      this.title,      this.calificacion,      this.cantidadEstrellas});  @override  Widget build(BuildContext context) {    return Container(        width: 260,        height: 100,        padding: EdgeInsets.all(13),        margin: EdgeInsets.symmetric( horizontal: 7 ),        decoration: BoxDecoration(            borderRadius: BorderRadius.all(Radius.circular(10)),            color: Colors.white),        child: Column(children: [          //--- Fila 01          Row(children: [            Expanded(              child: Container(                  alignment: Alignment.centerLeft,                  child: Image.asset(                    this.imgAssets,                    width: 25,                    height: 23,                  )),            ),            Expanded(              child: Container(                alignment: Alignment.centerRight,                child: Container(                  child: Icon(                    FontAwesomeIcons.solidPaperPlane,                    color: Colors.indigo,                    size: 13,                  ),                  decoration: BoxDecoration(                    borderRadius: BorderRadius.circular(100),                    color: Colors.white,                    boxShadow: [BoxShadow(                      blurRadius: 10,                      color: Colors.black12                    )]                  ),                  padding: EdgeInsets.all(5),                ),              ),            )          ]),          //--- Fila 02          Container(            child: Column(children: [              Container(                child: Text(this.title, style: TextStyle(                  fontWeight: FontWeight.bold                ),),                alignment: Alignment.centerLeft,                margin: EdgeInsets.symmetric( vertical: 10 ),              ),              Row(                children: [                  Expanded(                    child: Text(                      this.description,                      textAlign: TextAlign.left,                      style: TextStyle(                        fontSize: 10                      ),                    ),                  ),                  Expanded(                    child: Container(                      child: IconStarCustom(                        cantidadEstrellas: this.cantidadEstrellas,                        calificacionItem: this.calificacion,                        alignment: Alignment.centerRight,                      ),                    )                  )                ],              )            ]),          ),        ]));  }}
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+
+class ItemHeaderCustom extends StatelessWidget {
+  //--- Parametros
+  final String imgAssets;
+  final String title;
+  final int year;
+  final String calificacion;
+  
+  const ItemHeaderCustom(
+      {this.imgAssets,
+      this.title,
+      this.year,
+      this.calificacion,});
+
+  @override
+  Widget build(BuildContext context) {
+
+    return Container(
+
+      width: 250,
+      height: double.infinity,
+      margin: EdgeInsets.only( right: 10 ),
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(10),
+        color: Colors.white,
+      ),
+
+      child: Column(
+        children: [
+          //---- IMAGEN
+          ClipRRect(
+            borderRadius: BorderRadius.circular(10),
+            child: Image.asset(
+            this.imgAssets,
+            width: double.infinity,
+            height: 135,
+            fit: BoxFit.fill,
+            ),
+          ) ,
+          //---- TITULO
+          Container(
+            margin: EdgeInsets.only( top: 10, bottom: 7 ),
+            child: Text(
+              this.title,
+              style: TextStyle(
+                fontWeight: FontWeight.bold
+              ),
+              ),
+              alignment: Alignment.centerLeft,
+          ),
+          //---- AÑO
+          Container(
+            child: Text( 
+              this.year.toString() ,
+              style: TextStyle(
+                fontSize: 12
+              ),
+            ),
+            alignment: Alignment.centerLeft,
+          ),
+
+        ],
+      ),
+    ); 
+  }
+}

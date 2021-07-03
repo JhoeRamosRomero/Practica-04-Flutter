@@ -15,10 +15,7 @@ class MyApp extends StatelessWidget{
       initialRoute: "favorite",
       routes: {
         'favorite': (_) => FavoriteUI(),
-      },
-      theme: ThemeData(
-        scaffoldBackgroundColor: Colors.black12
-      )
+      }
     );
 
   }

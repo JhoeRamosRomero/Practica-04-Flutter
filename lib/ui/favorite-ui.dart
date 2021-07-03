@@ -60,111 +60,48 @@ class Header extends StatelessWidget {
   Widget build(BuildContext context) {
 
     return Container(
-
-      height: 200,
+      margin: EdgeInsets.symmetric( horizontal: 20, vertical: 20 ),
+      height: 300,
       child: Column(
         children: [
+          
           //--- Componentes - Linea 01
           Container(
-            margin: EdgeInsets.symmetric( horizontal: 20, vertical: 15 ),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              textDirection: TextDirection.ltr,
-              children: [
-                Expanded(
-
-                  child: Container(
-                    alignment: Alignment.centerLeft,
-                    child: Icon(
-                        Icons.add_business
-                    ),
-                  ),
+            alignment: Alignment.centerLeft,
+            margin: EdgeInsets.only( bottom: 20 ),
+            child: Text(
+                "Premieres",
+                style: TextStyle(
+                  fontWeight: FontWeight.bold
                 ),
-                Expanded(
-                  child: Container(
-                    alignment: Alignment.center,
-                    child: Text(
-                        "Kudos"
-                    ),
-                  ),
-                ),
-                Expanded(
-                  child: Container(
-                    alignment: Alignment.centerRight,
-                    child: Icon(
-                        Icons.shopping_cart_outlined
-                    ),
-                  ),
-                ),
-              ],
-            ),
-          ),
-          //--- Componentes - Linea 02
-          Container(
-            margin: EdgeInsets.symmetric( horizontal: 20 ),
-            child: Row(
-              children: [
-                Expanded(
-                  child: Container(
-                    child: Text(
-                        "Favourites"
-                    ),
-                    alignment: Alignment.centerLeft,
-                  ),
-                ),
-                Expanded(
-                  child: Container(
-                    child: Container(
-                      width: 90,
-                      height: 30,
-                      alignment: Alignment.center,
-                      child: Text(
-                        "VIEW ALL",
-                        style: TextStyle(
-                          fontSize: 8,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.white
-                        ),
-                      ),
-                      decoration: BoxDecoration(
-                          color: Colors.deepPurple,
-                          borderRadius: BorderRadius.circular(20)
-                      ),
-                    ),
-                    alignment: Alignment.centerRight,
-                  ),
-                )
-              ],
             ),
               //--- Componentes - Linea 03
           ),
           SingleChildScrollView(
             child: Container(
-              height: 100,
+              height: 190,
+              width: double.infinity,
               child: ListView(
                 scrollDirection: Axis.horizontal,
                 children: [
                   ItemHeaderCustom(
-                    cantidadEstrellas: 4,
-                    title: "Washer Machine",
+                    title: "Quien Mato a Sara?",
+                    year: 2020,
                     calificacion: "4.6",
-                    imgAssets: "assets/Item01.png",
-                    description: "Ready Wash Staininess",
+                    imgAssets: "assets/Portada 01.jpg",
                   ),
                   ItemHeaderCustom(
-                    cantidadEstrellas: 4,
-                    title: "Washer Machine",
+                    title: "Lef4Dead 2",
+                    year: 2014,
                     calificacion: "4.6",
-                    imgAssets: "assets/Item01.png",
-                    description: "Ready Wash Staininess",
+                    imgAssets: "assets/Portada 02.jpg",
                   ),
                   ItemHeaderCustom(
-                    cantidadEstrellas: 4,
-                    title: "Washer Machine",
+                    title: "DARK",
+                    year: 2020,
                     calificacion: "4.6",
-                    imgAssets: "assets/Item01.png",
-                    description: "Ready Wash Staininess",
-                  )
+                    imgAssets: "assets/Portada 03.jpg",
+                  ) 
                 ],
               ),
             ),
